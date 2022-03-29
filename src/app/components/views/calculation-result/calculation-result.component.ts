@@ -8,9 +8,13 @@ import { Calculation } from '../../model/calculationForm/calculation';
 })
 export class CalculationResultComponent implements OnInit {
 
+  public warn: Boolean = true;
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: Calculation) { }
 
   ngOnInit(): void {
+    this.warn = this.data.hasMininumProducts;
+    console.log(this.warn)
   }
   
   // calculation: Calculation = {

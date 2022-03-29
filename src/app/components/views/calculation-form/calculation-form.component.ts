@@ -167,22 +167,32 @@ export class CalculationFormComponent implements OnInit {
   private calculate() {
     this.calculationService.calculateProducts(this.applicationForm)
       .subscribe(calc => {
-        console.log(calc);
         this.calculation.hasMininumProducts = calc.hasMininumProducts;
         this.calculation.applicationSuggestions.push(...calc.applicationSuggestions);
         this.openDialog(calc);
       })
 
+      this.formApplication.reset();
       // this.router.navigate(['/calculation-result']);
   }
 
+  private clearParams() {
+   this.applicationForm.volume = 0;
+   this.applicationForm.parameters = [];
+   this.applicationForm.products = []; 
+  }
+
   public openDialog(calculation: Calculation) {
+    console.log("testando")
+    console.log(calculation)
     this.dialog.open(CalculationResultComponent, {
       data: {...calculation}  
+    }).afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.clearParams();
     });
 
     
   }
-
   
 }
