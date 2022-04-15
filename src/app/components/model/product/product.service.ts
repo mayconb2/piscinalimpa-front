@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Common } from '../../common/common';
+import { Common } from '../../../common/common';
 import { Product } from './product';
 import { Observable } from 'rxjs';
 
