@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './components/views/login/login.component';
+import { AdminComponent } from './components/views/admin/admin.component';
 
 
 
@@ -39,7 +40,8 @@ import { LoginComponent } from './components/views/login/login.component';
     HomeComponent,
     CalculationFormComponent,
     CalculationResultComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

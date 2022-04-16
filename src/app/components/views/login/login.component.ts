@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/common/auth/auth.service';
+import { TokenService } from 'src/app/common/token/token.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { AuthService } from 'src/app/common/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
   
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router, private tokenService: TokenService) { }
   
   ngOnInit(): void {
   
@@ -20,13 +22,19 @@ export class LoginComponent implements OnInit {
   });
 
   submit() {
-    this.login('mayconb2', '123456')
+    const login = this.form.get('login')?.value;
+    const password = this.form.get('password')?.value;
+
+    this.login(login, password)
   }
 
   login(login: string, password: string) {
     this.auth.authenticate(login, password)
-    .subscribe(xunda => {
-      console.log(xunda)
+    .subscribe(token => {
+      console.log(token)
+      this.tokenService.setToken(token);
+      this.router.navigate(['/admin']);
+      
     }, err => {
       console.log(err);
       this.form.reset();

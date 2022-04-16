@@ -5,6 +5,8 @@ import { HomeComponent } from './components/views/home/home.component';
 import { CalculationFormComponent } from './components/views/calculation-form/calculation-form.component';
 import { CalculationResultComponent } from './components/views/calculation-result/calculation-result.component';
 import { LoginComponent } from './components/views/login/login.component';
+import { AdminComponent } from './components/views/admin/admin.component';
+import { AuthGuard } from './common/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -21,7 +23,12 @@ const routes: Routes = [
   },
   {
     path:"login",
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path:"admin",
+    component: AdminComponent
   }
 ];
 
