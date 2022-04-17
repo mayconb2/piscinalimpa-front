@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate{
   }
 
   isLogged() {
-    return this.tokenService.hasToken();
+    return this.tokenService.hasTokenAndIsValid();
   }
 
 }

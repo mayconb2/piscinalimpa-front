@@ -13,15 +13,13 @@ export class RequestInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    if(this.tokenService.hasToken()) {
+    if(this.tokenService.hasTokenAndIsValid()) {
       const token = this.tokenService.getToken();
       
       if(token != null) {
-        req = req.clone({
-          setHeaders: {
-            "Authorization": token
-          }
-        })
+        req = req.clone({ 
+          headers: req.headers.set('Authorization', token),
+        });
       }
     }
     return next.handle(req);
