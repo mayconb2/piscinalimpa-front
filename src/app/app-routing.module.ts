@@ -7,6 +7,7 @@ import { CalculationResultComponent } from './components/views/calculation-resul
 import { LoginComponent } from './components/views/login/login.component';
 import { AdminComponent } from './components/views/admin/admin.component';
 import { AuthGuard } from './common/auth/auth.guard';
+import { ProductComponent } from './components/views/admin/product/product.component';
 
 const routes: Routes = [
   {
@@ -15,16 +16,28 @@ const routes: Routes = [
   },
   {
     path:"calculation",
-    component: CalculationFormComponent
+    component: CalculationFormComponent,
+    outlet: 'xablau'
   },
   {
     path:"calculation-result",
     component: CalculationResultComponent
   },
   {
+    path:"product",
+    component: ProductComponent,
+    outlet: 'xablau'
+  },
+  {
     path:"login",
     component: LoginComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'product',
+        component: ProductComponent
+      }
+    ]
   },
   {
     path:"admin",

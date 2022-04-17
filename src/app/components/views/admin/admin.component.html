@@ -1,1 +1,66 @@
-<p>admin works!</p>
+<!-- <h3>No animation</h3>
+
+<mat-tab-group animationDuration="0ms">
+  <mat-tab label="Produtos"></mat-tab>
+  <mat-tab label="Fórmulas">Fórmulas</mat-tab>
+  <mat-tab label="Cálculos">Cálculos</mat-tab>
+  <mat-tab label="Usuários">Usuários</mat-tab>
+</mat-tab-group>
+ -->
+
+
+<!-- <nav mat-tab-nav-bar ngClass = "tabs">
+<a mat-tab-link *ngFor="let link of links"
+    (click)="activeLink = link"
+    [active]="activeLink == link"
+    [routerLink]="['', { outlets: { xablau: ['link.value'] } }]"
+    > {{link}}
+</a>
+</nav> -->
+
+<!-- <nav mat-tab-nav-bar ngClass = "tabs">
+<a mat-tab-link *ngFor="let link of links"
+    [routerLink]="['', { outlets: { xablau: ['link.path'] } }]"
+    > {{link.label}}
+</a>
+</nav> -->
+
+
+<!-- <nav mat-tab-nav-bar ngClass = "tabs">
+  <a mat-tab-link routerLink="['',{  outlets: { 'xablau': ['product'] } }]" routerLinkActive="active-link">Home</a>
+  <a mat-tab-link routerLink="/add-book" routerLinkActive="active-link">Add Book</a>
+  <a mat-tab-link routerLink="/manage-book" routerLinkActive="active-link">Manage Book</a>
+</nav>   -->
+
+
+
+<!-- <nav mat-tab-nav-bar ngClass = "tabs">
+  <a mat-tab-link routerLink="/calculation" routerLinkActive="active-link">Home</a>
+  <a mat-tab-link routerLink="/add-book" routerLinkActive="active-link">Add Book</a>
+  <a mat-tab-link routerLink="/manage-book" routerLinkActive="active-link">Manage Book</a>
+</nav>   -->
+<!-- <div>	
+ <router-outlet></router-outlet>	
+
+
+
+
+
+
+
+
+
+
+
+</div-->
+
+<nav mat-tab-nav-bar ngClass = "tabs">
+  <a mat-tab-link
+      [routerLink]="['', { outlets: { xablau: ['product'] } }]"
+      > Product
+  </a>
+  <a mat-tab-link
+      [routerLink]="['', { outlets: { xablau: ['calculation'] } }]"
+      > Calc
+  </a>
+</nav>
