@@ -33,6 +33,10 @@ import { BrandComponent } from './components/views/admin/brand/brand.component';
 import { FormulaComponent } from './components/views/admin/formula/formula.component';
 import { CalculationComponent } from './components/views/admin/calculation/calculation.component';
 import { UserComponent } from './components/views/admin/user/user.component';
+import { User2Component } from './components/views/admin/user/user2/user2.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -51,7 +55,8 @@ import { UserComponent } from './components/views/admin/user/user.component';
     BrandComponent,
     FormulaComponent,
     CalculationComponent,
-    UserComponent
+    UserComponent,
+    User2Component
   ],
   imports: [
     BrowserModule,
@@ -71,7 +76,10 @@ import { UserComponent } from './components/views/admin/user/user.component';
     ReactiveFormsModule,
     MatDialogModule,
     MatTabsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     {
