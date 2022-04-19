@@ -8,6 +8,10 @@ import { LoginComponent } from './components/views/login/login.component';
 import { AdminComponent } from './components/views/admin/admin.component';
 import { AuthGuard } from './common/auth/auth.guard';
 import { ProductComponent } from './components/views/admin/product/product.component';
+import { BrandComponent } from './components/views/admin/brand/brand.component';
+import { CalculationComponent } from './components/views/admin/calculation/calculation.component';
+import { FormulaComponent } from './components/views/admin/formula/formula.component';
+import { UserComponent } from './components/views/admin/user/user.component';
 
 const routes: Routes = [
   {
@@ -16,8 +20,7 @@ const routes: Routes = [
   },
   {
     path:"calculation",
-    component: CalculationFormComponent,
-    outlet: 'xablau'
+    component: CalculationFormComponent
   },
   {
     path:"calculation-result",
@@ -26,18 +29,32 @@ const routes: Routes = [
   {
     path:"product",
     component: ProductComponent,
-    outlet: 'xablau'
+    outlet: 'admin'
+  },
+  {
+    path:"brand",
+    component: BrandComponent,
+    outlet: 'admin'
+  },
+  {
+    path:"calculation",
+    component: CalculationComponent,
+    outlet: 'admin'
+  },
+  {
+    path:"formula",
+    component: FormulaComponent,
+    outlet: 'admin'
+  },
+  {
+    path:"user",
+    component: UserComponent,
+    outlet: 'admin'
   },
   {
     path:"login",
     component: LoginComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'product',
-        component: ProductComponent
-      }
-    ]
+    canActivate: [AuthGuard]
   },
   {
     path:"admin",

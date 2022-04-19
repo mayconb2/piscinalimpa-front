@@ -13,8 +13,8 @@ export class AdminComponent implements OnInit {
   //   {path: 'product', label: 'Product'}
   // ];
 
-  links = ['product', 'calculation']
-  activeLink = this.links[0];
+  // links = ['product', 'calculation']
+  // activeLink = this.links[0];
 
   constructor() { }
 

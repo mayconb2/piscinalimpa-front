@@ -1,5 +1,5 @@
 import { ParameterValue } from '../parameterValue/parameterValue';
-import { Product } from '../product/product';
+import { Product } from '../product-api/product';
 
 export interface ApplicationForm {
   volume: number;

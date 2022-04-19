@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplicationForm } from '../../model/calculationForm/applicationForm';
 import { ParameterValue } from '../../model/parameterValue/parameterValue';
-import { Product } from '../../model/product/product';
-import { ProductService } from '../../model/product/product.service';
+import { Product } from '../../model/product-api/product';
+import { ProductService } from '../../model/product-api/product.service';
 import { FormControl, FormBuilder, Validators } from '@angular/forms';
 import { CalculationFormService } from '../../model/calculationForm/calculation-form.service';
 import { MatDialog } from '@angular/material/dialog';

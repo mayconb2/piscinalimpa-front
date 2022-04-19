@@ -29,6 +29,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './components/views/login/login.component';
 import { AdminComponent } from './components/views/admin/admin.component';
 import { RequestInterceptor } from './common/auth/request.interceptor';
+import { BrandComponent } from './components/views/admin/brand/brand.component';
+import { FormulaComponent } from './components/views/admin/formula/formula.component';
+import { CalculationComponent } from './components/views/admin/calculation/calculation.component';
+import { UserComponent } from './components/views/admin/user/user.component';
 
 
 
@@ -43,7 +47,11 @@ import { RequestInterceptor } from './common/auth/request.interceptor';
     CalculationFormComponent,
     CalculationResultComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    BrandComponent,
+    FormulaComponent,
+    CalculationComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
