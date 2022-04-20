@@ -12,7 +12,12 @@ export class TokenService {
   constructor() { }
 
   hasTokenAndIsValid() {
-    return this.getToken()
+    let token = this.getToken();
+
+    if(this.tokenExistAndIsValid(token)) {
+      return true;
+    }
+    return false;
   }
 
   setToken(token: string) {
@@ -20,24 +25,24 @@ export class TokenService {
   }
 
   getToken() {
-    if(this.verifyToken()) {
-      return window.localStorage.getItem(KEY);
-    }
-    return null;
+    return window.localStorage.getItem(KEY);
   }
 
   private isValidToken(token: string) {
     const tokenDecoded = jwt_decode(token) as Token;
     const dateExpiredInTimeStamp = tokenDecoded.exp;
-    return Date.now() > dateExpiredInTimeStamp;
+    return Date.now() < dateExpiredInTimeStamp * 1000;
   }
 
-  private verifyToken() {
-    const token = window.localStorage.getItem(KEY);
-    if (token && this.isValidToken(token)) {
-      return true;
+  private tokenExistAndIsValid(token: string | null) {
+    if(token === null) {
+      return false;
     }
 
-    return false;
+    if (!this.isValidToken(token)) {
+      return false;
+    }
+
+    return true;
   }
 }

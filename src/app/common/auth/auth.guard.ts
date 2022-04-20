@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate{
               private router: Router) {}
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     
-    if(this.isLogged()) {
+    if(this.hasValidToken()) {
       this.router.navigate(['/admin']);
       return false;
     }
@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate{
     return true;
   }
 
-  isLogged() {
+  hasValidToken() {
     return this.tokenService.hasTokenAndIsValid();
   }
 }

@@ -10,6 +10,7 @@ import { UserService } from './user.service';
 export class UserComponent implements OnInit {
 
   allUsers: User[] = [];
+  displayedColumns = ['id', 'login', 'action'];
 
   constructor(private userService: UserService) { }
 
