@@ -38,6 +38,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { UserCreateComponent } from './components/views/admin/user/user-create/user-create.component';
 import { BrandCreateComponent } from './components/views/admin/brand/brand-create/brand-create.component';
+import { FormulaCreateComponent } from './components/views/admin/formula/formula-create/formula-create.component';
 
 
 
@@ -59,6 +60,7 @@ import { BrandCreateComponent } from './components/views/admin/brand/brand-creat
     UserComponent,
     UserCreateComponent,
     BrandCreateComponent,
+    FormulaCreateComponent,
   ],
   imports: [
     BrowserModule,

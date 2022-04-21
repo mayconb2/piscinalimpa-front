@@ -14,6 +14,7 @@ import { FormulaComponent } from './components/views/admin/formula/formula.compo
 import { UserComponent } from './components/views/admin/user/user.component';
 import { UserCreateComponent } from './components/views/admin/user/user-create/user-create.component';
 import { BrandCreateComponent } from './components/views/admin/brand/brand-create/brand-create.component';
+import { FormulaCreateComponent } from './components/views/admin/formula/formula-create/formula-create.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,11 @@ const routes: Routes = [
   {
     path:"formula",
     component: FormulaComponent,
+    outlet: 'admin'
+  },
+  {
+    path:"formula-create",
+    component: FormulaCreateComponent,
     outlet: 'admin'
   },
   {

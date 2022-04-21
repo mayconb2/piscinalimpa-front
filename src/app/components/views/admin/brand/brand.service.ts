@@ -16,6 +16,6 @@ export class BrandService {
   }
 
   createBrand(brand: Brand): Observable<Brand> {
-    return this.http.post<Brand>(Common.BASE_URL + '/brand/v1', brand);
+    return this.http.post<Brand>(Common.BASE_URL + '/adm/v1/brand', brand);
   } 
 }
