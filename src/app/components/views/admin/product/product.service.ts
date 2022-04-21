@@ -8,7 +8,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers() {
+  getProducts() {
     
   }
 }

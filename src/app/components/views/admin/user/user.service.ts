@@ -14,4 +14,8 @@ export class UserService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(Common.BASE_URL + '/adm/v1/user');
   }
+
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(Common.BASE_URL + '/adm/v1', user);
+  } 
 }

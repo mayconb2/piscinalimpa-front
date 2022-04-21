@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from './user';
 import { UserService } from './user.service';
 
@@ -12,13 +13,17 @@ export class UserComponent implements OnInit {
   allUsers: User[] = [];
   displayedColumns = ['id', 'login', 'action'];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router,) { }
 
   ngOnInit(): void {
     this.userService.getUsers()
       .subscribe(users => {
         this.allUsers = users;
       });
+  }
+
+  navigateToCreateUser(): void {
+    this.router.navigate([{ outlets: { admin: [ 'user-create'] }}]);
   }
 
 }

@@ -10,3 +10,7 @@ i.edit {
 i.delete {
   color: #d92525
 }
+
+button {
+  margin-top: 10px;
+}

@@ -12,6 +12,7 @@ import { BrandComponent } from './components/views/admin/brand/brand.component';
 import { CalculationComponent } from './components/views/admin/calculation/calculation.component';
 import { FormulaComponent } from './components/views/admin/formula/formula.component';
 import { UserComponent } from './components/views/admin/user/user.component';
+import { UserCreateComponent } from './components/views/admin/user/user-create/user-create.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,11 @@ const routes: Routes = [
   {
     path:"user",
     component: UserComponent,
+    outlet: 'admin'
+  },
+  {
+    path:"user-create",
+    component: UserCreateComponent,
     outlet: 'admin'
   },
   {

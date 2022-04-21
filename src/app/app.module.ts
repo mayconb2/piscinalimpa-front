@@ -33,10 +33,10 @@ import { BrandComponent } from './components/views/admin/brand/brand.component';
 import { FormulaComponent } from './components/views/admin/formula/formula.component';
 import { CalculationComponent } from './components/views/admin/calculation/calculation.component';
 import { UserComponent } from './components/views/admin/user/user.component';
-import { User2Component } from './components/views/admin/user/user2/user2.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { UserCreateComponent } from './components/views/admin/user/user-create/user-create.component';
 
 
 
@@ -56,7 +56,7 @@ import { MatSortModule } from '@angular/material/sort';
     FormulaComponent,
     CalculationComponent,
     UserComponent,
-    User2Component
+    UserCreateComponent,
   ],
   imports: [
     BrowserModule,
