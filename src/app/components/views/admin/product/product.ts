@@ -1,5 +1,9 @@
+import { Brand } from "../brand/brand";
+
 export interface Product {
-  id?: number,
-  login: string
-  password?: string
+  id?: number;
+  name: string;
+  affectedParameter: number;
+  brandId: Brand;
+  brandName: string;
 }

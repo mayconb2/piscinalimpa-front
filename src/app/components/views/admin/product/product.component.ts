@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Brand } from '../brand/brand';
+import { Product } from './product';
+import { ProductDisplay } from './product-display';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +12,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  allProducts: Product[] = [];
+
+  affectedParameters = [
+    {
+      id: 1,
+      nameParam: 'Cloro'
+    },
+    {
+      id: 2,
+      nameParam: 'pH'
+    },
+    {
+      id: 3,
+      nameParam: 'Alcalinidade'
+    },
+    {
+      id: 4,
+      nameParam: 'Turbidez'
+    }
+  ];
+
+  productsFromBack: Product[] = [];
+  brandsFromBack: Brand[] = [];
+
+  displayedColumns = ['id', 'name', 'brand', 'affectedParameter' ,'action'];
+
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
+
+    let productsDisplay: ProductDisplay[] = [];
+
+    this.productService.getProducts()
+      .subscribe(products => {
+        this.allProducts = products;
+      });
+  }
+
+  navigateToCreateProduct(): void {
+    this.router.navigate([{ outlets: { admin: [ 'product-create'] }}]);
   }
 
 }

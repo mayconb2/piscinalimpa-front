@@ -15,6 +15,7 @@ import { UserComponent } from './components/views/admin/user/user.component';
 import { UserCreateComponent } from './components/views/admin/user/user-create/user-create.component';
 import { BrandCreateComponent } from './components/views/admin/brand/brand-create/brand-create.component';
 import { FormulaCreateComponent } from './components/views/admin/formula/formula-create/formula-create.component';
+import { ProductCreateComponent } from './components/views/admin/product/product-create/product-create.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
   {
     path:"product",
     component: ProductComponent,
+    outlet: 'admin'
+  },
+  {
+    path:"product-create",
+    component: ProductCreateComponent,
     outlet: 'admin'
   },
   {

@@ -39,6 +39,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { UserCreateComponent } from './components/views/admin/user/user-create/user-create.component';
 import { BrandCreateComponent } from './components/views/admin/brand/brand-create/brand-create.component';
 import { FormulaCreateComponent } from './components/views/admin/formula/formula-create/formula-create.component';
+import { ProductCreateComponent } from './components/views/admin/product/product-create/product-create.component';
+import { ProductComponent } from './components/views/admin/product/product.component';
 
 
 
@@ -61,6 +63,8 @@ import { FormulaCreateComponent } from './components/views/admin/formula/formula
     UserCreateComponent,
     BrandCreateComponent,
     FormulaCreateComponent,
+    ProductCreateComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
