@@ -33,56 +33,65 @@ const routes: Routes = [
   {
     path:"product",
     component: ProductComponent,
-    outlet: 'admin'
+    outlet: 'admin',
+    canActivate: [AuthGuard]
   },
   {
     path:"product-create",
     component: ProductCreateComponent,
-    outlet: 'admin'
+    outlet: 'admin',
+    canActivate: [AuthGuard]
   },
   {
     path:"brand",
     component: BrandComponent,
-    outlet: 'admin'
+    outlet: 'admin',
+    canActivate: [AuthGuard]
   },
   {
     path:"brand-create",
     component: BrandCreateComponent,
-    outlet: 'admin'
+    outlet: 'admin',
+    canActivate: [AuthGuard]
   },
   {
     path:"calculation",
     component: CalculationComponent,
-    outlet: 'admin'
+    outlet: 'admin',
+    canActivate: [AuthGuard]
   },
   {
     path:"formula",
     component: FormulaComponent,
-    outlet: 'admin'
+    outlet: 'admin',
+    canActivate: [AuthGuard]
   },
   {
     path:"formula-create",
     component: FormulaCreateComponent,
-    outlet: 'admin'
+    outlet: 'admin',
+    canActivate: [AuthGuard]
   },
   {
     path:"user",
     component: UserComponent,
-    outlet: 'admin'
+    outlet: 'admin',
+    canActivate: [AuthGuard]
   },
   {
     path:"user-create",
     component: UserCreateComponent,
-    outlet: 'admin'
-  },
-  {
-    path:"login",
-    component: LoginComponent,
+    outlet: 'admin',
     canActivate: [AuthGuard]
   },
   {
+    path:"login",
+    component: LoginComponent
+  },
+  {
     path:"admin",
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
