@@ -2,10 +2,10 @@ import { InterventionLevel } from "src/app/components/model/interventionLevel/in
 import { Formula } from "../formula/formula";
 import { Product } from "../product/product";
 
-export interface Calculation {
+export interface CalculationDto {
   id?: number,
   multiplier: number,
-  product: Product,
-  interventionLevel: InterventionLevel,
-  formula: Formula,
+  product: number,
+  interventionLevel: number,
+  formula: number,
 }

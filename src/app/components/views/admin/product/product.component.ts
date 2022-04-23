@@ -32,7 +32,6 @@ export class ProductComponent implements OnInit {
     }
   ];
 
-  productsFromBack: Product[] = [];
   brandsFromBack: Brand[] = [];
 
   displayedColumns = ['id', 'name', 'brand', 'affectedParameter' ,'action'];

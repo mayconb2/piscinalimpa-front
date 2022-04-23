@@ -1,1 +1,40 @@
-<p>calculation-create works!</p>
+<mat-card>
+  <mat-card-title>Novo Cálculo</mat-card-title>
+  <form [formGroup]="formCalculationCreate">
+
+    <mat-form-field >
+      <input matInput placeholder="Digite o valor do multiplicador" [(ngModel)]="calculationToCreate.multiplier" formControlName="multiplier">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione o Produto</mat-label>
+      <mat-select formControlName="product">
+        <mat-option *ngFor="let product of allProducts" value="{{product.id}}">{{product.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione o nível de intervenção</mat-label>
+      <mat-select formControlName="interventionLevel">
+        <mat-option *ngFor="let il of interventionLevel" value="{{il.id}}">{{il.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione a fórmula</mat-label>
+      <mat-select formControlName="formula">
+        <mat-option *ngFor="let formula of allFormulas" value="{{formula.id}}">{{formula.formula}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+
+  <button mat-raised-button (click)='create()' color='primary'>
+    Salvar
+  </button>
+  
+  <button mat-raised-button (click)='cancel()'>
+    Cancelar
+  </button>
+</mat-card>
