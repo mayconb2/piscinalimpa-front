@@ -41,6 +41,7 @@ import { BrandCreateComponent } from './components/views/admin/brand/brand-creat
 import { FormulaCreateComponent } from './components/views/admin/formula/formula-create/formula-create.component';
 import { ProductCreateComponent } from './components/views/admin/product/product-create/product-create.component';
 import { ProductComponent } from './components/views/admin/product/product.component';
+import { CalculationCreateComponent } from './components/views/admin/calculation/calculation-create/calculation-create.component';
 
 
 
@@ -65,6 +66,7 @@ import { ProductComponent } from './components/views/admin/product/product.compo
     FormulaCreateComponent,
     ProductCreateComponent,
     ProductComponent,
+    CalculationCreateComponent,
   ],
   imports: [
     BrowserModule,

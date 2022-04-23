@@ -19,7 +19,6 @@ export class FormulaComponent implements OnInit {
   ngOnInit(): void {
     this.formulaService.getFormulas()
       .subscribe(formulas => {
-        console.log(formulas)
         this.allFormulas = formulas;
       });
   }
