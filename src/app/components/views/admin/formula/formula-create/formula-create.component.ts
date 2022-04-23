@@ -17,6 +17,7 @@ export class FormulaCreateComponent implements OnInit {
   formulaToCreate: Formula = {
     formula: ''
   }
+
   constructor(private formulaService: FormulaService, private router: Router) { }
 
   ngOnInit(): void {
@@ -27,7 +28,6 @@ export class FormulaCreateComponent implements OnInit {
       .subscribe(() => {
         this.formulaService.showMessage('Fórmula criada!');
         this.router.navigate(['', { outlets: { admin: ['formula'] } }])
-        
       })
   }
 
