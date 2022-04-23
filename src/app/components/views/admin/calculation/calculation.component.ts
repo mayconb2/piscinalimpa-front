@@ -11,7 +11,7 @@ import { CalculationService } from './calculation.service';
 export class CalculationComponent implements OnInit {
 
   allCalculation: Calculation[] = [];
-  displayedColumns = ['id', 'multiplier', 'product', 'interventionLevel', 'formula'];
+  displayedColumns = ['id', 'multiplier', 'product', 'interventionLevel', 'formula', 'action'];
 
   constructor(private calculationService: CalculationService, private router: Router) { }
 

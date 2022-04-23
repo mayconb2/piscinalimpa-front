@@ -1,1 +1,30 @@
-<p>product-create works!</p>
+<mat-card>
+  <mat-card-title>Novo Produto</mat-card-title>
+  <form [formGroup]="formProductCreate">
+    <mat-form-field >
+      <input matInput placeholder="Digite o nome" [(ngModel)]="productToCreate.name" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione a Marca</mat-label>
+      <mat-select formControlName="brand">
+        <mat-option *ngFor="let brand of brands" value="{{brand.id}}">{{brand.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione o parâmetro afetado</mat-label>
+      <mat-select formControlName="affectedParameter">
+        <mat-option *ngFor="let ap of affectedParameters" value="{{ap.id}}">{{ap.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button (click)='create()' color='primary'>
+    Salvar
+  </button>
+  
+  <button mat-raised-button (click)='cancel()'>
+    Cancelar
+  </button>
+</mat-card>

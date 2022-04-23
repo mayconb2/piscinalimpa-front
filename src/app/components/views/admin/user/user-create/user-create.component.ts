@@ -20,13 +20,16 @@ export class UserCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cancel(): void {
+    this.router.navigate(['', { outlets: { admin: ['user'] } }])
+  }
+
   createUser() {
-    console.log(this.user)
     this.userService.createUser(this.user)
       .subscribe(() => {
-        console.log('substituir por msg de criado com snack bar');
+        this.userService.showMessage('Usuário criado!');
+        this.router.navigate(['', { outlets: { admin: ['user'] } }])
       });
-    this.router.navigate([{ outlets: { admin: [ 'user'] }}])
   }
 
 }

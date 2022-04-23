@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Brand } from '../brand/brand';
 import { Product } from './product';
-import { ProductDisplay } from './product-display';
 import { ProductService } from './product.service';
 
 @Component({
@@ -42,11 +41,10 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let productsDisplay: ProductDisplay[] = [];
-
     this.productService.getProducts()
       .subscribe(products => {
         this.allProducts = products;
+        console.log(products)
       });
   }
 
