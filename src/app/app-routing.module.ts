@@ -10,13 +10,14 @@ import { AuthGuard } from './common/auth/auth.guard';
 import { ProductComponent } from './components/views/admin/product/product.component';
 import { BrandComponent } from './components/views/admin/brand/brand.component';
 import { CalculationComponent } from './components/views/admin/calculation/calculation.component';
-import { FormulaComponent } from './components/views/admin/formula/formula.component';
+import { FormulaComponent } from './components/views/admin/formula/formula-read/formula.component';
 import { UserComponent } from './components/views/admin/user/user.component';
 import { UserCreateComponent } from './components/views/admin/user/user-create/user-create.component';
 import { BrandCreateComponent } from './components/views/admin/brand/brand-create/brand-create.component';
 import { FormulaCreateComponent } from './components/views/admin/formula/formula-create/formula-create.component';
 import { ProductCreateComponent } from './components/views/admin/product/product-create/product-create.component';
 import { CalculationCreateComponent } from './components/views/admin/calculation/calculation-create/calculation-create.component';
+import { FormulaUpdateComponent } from './components/views/admin/formula/formula-update/formula-update.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,12 @@ const routes: Routes = [
   {
     path:"formula-create",
     component: FormulaCreateComponent,
+    outlet: 'admin',
+    canActivate: [AuthGuard]
+  },
+  {
+    path:"formula-update/:id",
+    component: FormulaUpdateComponent,
     outlet: 'admin',
     canActivate: [AuthGuard]
   },

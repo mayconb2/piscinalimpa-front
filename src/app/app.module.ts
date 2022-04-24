@@ -30,7 +30,7 @@ import { LoginComponent } from './components/views/login/login.component';
 import { AdminComponent } from './components/views/admin/admin.component';
 import { RequestInterceptor } from './common/auth/request.interceptor';
 import { BrandComponent } from './components/views/admin/brand/brand.component';
-import { FormulaComponent } from './components/views/admin/formula/formula.component';
+import { FormulaComponent } from './components/views/admin/formula/formula-read/formula.component';
 import { CalculationComponent } from './components/views/admin/calculation/calculation.component';
 import { UserComponent } from './components/views/admin/user/user.component';
 import { MatTableModule } from '@angular/material/table';
@@ -42,6 +42,7 @@ import { FormulaCreateComponent } from './components/views/admin/formula/formula
 import { ProductCreateComponent } from './components/views/admin/product/product-create/product-create.component';
 import { ProductComponent } from './components/views/admin/product/product.component';
 import { CalculationCreateComponent } from './components/views/admin/calculation/calculation-create/calculation-create.component';
+import { FormulaUpdateComponent } from './components/views/admin/formula/formula-update/formula-update.component';
 
 
 
@@ -67,6 +68,7 @@ import { CalculationCreateComponent } from './components/views/admin/calculation
     ProductCreateComponent,
     ProductComponent,
     CalculationCreateComponent,
+    FormulaUpdateComponent,
   ],
   imports: [
     BrowserModule,

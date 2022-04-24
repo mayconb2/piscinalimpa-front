@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Formula } from './formula';
-import { FormulaService } from './formula.service';
+import { Formula } from './../formula';
+import { FormulaService } from './../formula.service';
 
 @Component({
   selector: 'app-formula',

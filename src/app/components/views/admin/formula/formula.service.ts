@@ -26,5 +26,16 @@ export class FormulaService {
 
   createFormula(formula: Formula): Observable<Formula> {
     return this.http.post<Formula>(Common.BASE_URL + '/adm/v1/formula', formula);
-  } 
+  }
+
+  getById(id: string): Observable<Formula> {
+    const url: string = `${Common.BASE_URL}/adm/v1/formula/${id}`;
+    return this.http.get<Formula>(url)
+  }
+
+  update(formula: Formula): Observable<Formula> {
+    const url = `${Common.BASE_URL}/adm/v1/formula/${formula.id}`;
+    console.log(url)
+    return this.http.put<Formula>(url, formula)
+  }
 }
