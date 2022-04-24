@@ -35,7 +35,6 @@ export class FormulaService {
 
   update(formula: Formula): Observable<Formula> {
     const url = `${Common.BASE_URL}/adm/v1/formula/${formula.id}`;
-    console.log(url)
     return this.http.put<Formula>(url, formula)
   }
 }

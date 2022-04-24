@@ -16,10 +16,6 @@ export class CalculationResultComponent implements OnInit {
     this.warn = this.data.hasMininumProducts;
     console.log(this.warn)
   }
-  
-  // calculation: Calculation = {
-  //   applicationSuggestions : [],
-  //   hasMininumProducts: false
-  // }
+
 
 }

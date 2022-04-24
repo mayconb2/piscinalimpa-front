@@ -36,7 +36,6 @@ export class ProductService {
 
   update(product: ProductDto): Observable<ProductDto> {
     const url = `${Common.BASE_URL}/adm/v1/product/${product.id}`;
-    console.log(url)
     return this.http.put<ProductDto>(url, product)
   }
 

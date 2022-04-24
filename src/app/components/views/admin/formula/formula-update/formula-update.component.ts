@@ -22,7 +22,6 @@ export class FormulaUpdateComponent implements OnInit {
     const id = this.activateRoute.snapshot.paramMap.get('id')!;
     this.formulaService.getById(id)
       .subscribe(formula => {
-        console.log(formula)
         this.formulaToUpdate = formula;
       })
   }

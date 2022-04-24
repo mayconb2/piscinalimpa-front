@@ -22,7 +22,6 @@ export class BrandUpdateComponent implements OnInit {
     const id = this.activateRoute.snapshot.paramMap.get('id')!;
     this.brandService.getById(id)
       .subscribe(brand => {
-        console.log(brand)
         this.brandToUpdate = brand;
       })
   }
