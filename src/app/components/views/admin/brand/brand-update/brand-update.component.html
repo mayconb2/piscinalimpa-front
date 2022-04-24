@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>Alterar Marca</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Digite o nome"  [(ngModel)]="brandToUpdate.name" name="name">
+    </mat-form-field>
+  </form>
+  
+  <button mat-raised-button (click)='update()' color='primary'>
+    Salvar
+  </button>
+  
+  <button mat-raised-button (click)='cancel()'>
+    Cancelar
+  </button>
+</mat-card>

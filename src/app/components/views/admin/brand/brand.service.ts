@@ -26,5 +26,16 @@ export class BrandService {
 
   createBrand(brand: Brand): Observable<Brand> {
     return this.http.post<Brand>(Common.BASE_URL + '/adm/v1/brand', brand);
-  } 
+  }
+  
+  getById(id: string): Observable<Brand> {
+    const url: string = `${Common.BASE_URL}/adm/v1/brand/${id}`;
+    return this.http.get<Brand>(url)
+  }
+
+  update(brand: Brand): Observable<Brand> {
+    const url = `${Common.BASE_URL}/adm/v1/brand/${brand.id}`;
+    console.log(url)
+    return this.http.put<Brand>(url, brand)
+  }
 }
