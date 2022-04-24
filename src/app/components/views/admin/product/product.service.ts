@@ -27,5 +27,17 @@ export class ProductService {
 
   createProduct(product: ProductDto): Observable<Product> {
     return this.http.post<Product>(Common.BASE_URL + '/adm/v1/product', product);
-  } 
+  }
+
+  getById(id: string): Observable<Product> {
+    const url: string = `${Common.BASE_URL}/adm/v1/product/${id}`;
+    return this.http.get<Product>(url)
+  }
+
+  update(product: ProductDto): Observable<ProductDto> {
+    const url = `${Common.BASE_URL}/adm/v1/product/${product.id}`;
+    console.log(url)
+    return this.http.put<ProductDto>(url, product)
+  }
+
 }

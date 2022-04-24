@@ -36,7 +36,6 @@ export class UserUpdateComponent implements OnInit {
     const id = this.activateRoute.snapshot.paramMap.get('id')!;
     this.userService.getById(id)
       .subscribe(user => {
-        console.log(user)
         this.userToUpdate = user;
       })
   }

@@ -51,7 +51,6 @@ export class CalculationFormComponent implements OnInit {
     this.productService.getProducts()
       .subscribe(products => {
         allProductsFromBack.push(...products);
-        // console.log(allProductsFromBack)
         this.productsFromBackend = products;
         this.fillProductsByParameter(allProductsFromBack);
       });
@@ -183,12 +182,9 @@ export class CalculationFormComponent implements OnInit {
   }
 
   public openDialog(calculation: Calculation) {
-    console.log("testando")
-    console.log(calculation)
     this.dialog.open(CalculationResultComponent, {
       data: {...calculation}  
     }).afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
       this.clearParams();
     });
 

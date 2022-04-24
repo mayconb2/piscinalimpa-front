@@ -20,6 +20,7 @@ import { CalculationCreateComponent } from './components/views/admin/calculation
 import { FormulaUpdateComponent } from './components/views/admin/formula/formula-update/formula-update.component';
 import { BrandUpdateComponent } from './components/views/admin/brand/brand-update/brand-update.component';
 import { UserUpdateComponent } from './components/views/admin/user/user-update/user-update.component';
+import { ProductUpdateComponent } from './components/views/admin/product/product-update/product-update.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,12 @@ const routes: Routes = [
   {
     path:"product-create",
     component: ProductCreateComponent,
+    outlet: 'admin',
+    canActivate: [AuthGuard]
+  },
+  {
+    path:"product-update/:id",
+    component: ProductUpdateComponent,
     outlet: 'admin',
     canActivate: [AuthGuard]
   },

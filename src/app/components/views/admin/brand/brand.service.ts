@@ -35,7 +35,6 @@ export class BrandService {
 
   update(brand: Brand): Observable<Brand> {
     const url = `${Common.BASE_URL}/adm/v1/brand/${brand.id}`;
-    console.log(url)
     return this.http.put<Brand>(url, brand)
   }
 }
