@@ -19,6 +19,7 @@ import { ProductCreateComponent } from './components/views/admin/product/product
 import { CalculationCreateComponent } from './components/views/admin/calculation/calculation-create/calculation-create.component';
 import { FormulaUpdateComponent } from './components/views/admin/formula/formula-update/formula-update.component';
 import { BrandUpdateComponent } from './components/views/admin/brand/brand-update/brand-update.component';
+import { UserUpdateComponent } from './components/views/admin/user/user-update/user-update.component';
 
 const routes: Routes = [
   {
@@ -102,6 +103,12 @@ const routes: Routes = [
   {
     path:"user-create",
     component: UserCreateComponent,
+    outlet: 'admin',
+    canActivate: [AuthGuard]
+  },
+  {
+    path:"user-update/:id",
+    component: UserUpdateComponent,
     outlet: 'admin',
     canActivate: [AuthGuard]
   },

@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title>Alterar Usuário</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Digite o login"  [(ngModel)]="userToUpdate.login" name="login">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input type="password" matInput placeholder="senha atual" [(ngModel)]="userToUpdate.password" name="passowrd"> 
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="password" matInput placeholder="nova senha" [(ngModel)]="newPassword.newPassword1" name="newPassword1"> 
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="password" matInput placeholder="repita nova senha" [(ngModel)]="newPassword.newPassword2" name="newPassword2"> 
+    </mat-form-field>
+  </form>
+  
+  <button mat-raised-button (click)='update()' color='primary'>
+    Salvar
+  </button>
+  
+  <button mat-raised-button (click)='cancel()'>
+    Cancelar
+  </button>
+</mat-card>

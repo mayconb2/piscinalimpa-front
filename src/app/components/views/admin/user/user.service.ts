@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { Common } from 'src/app/common/common';
 import { User } from './user';
+import { UserForm } from './user-update/userForm';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,24 @@ export class UserService {
   createUser(user: User): Observable<User> {
     user.type = 'ADMIN';
     return this.http.post<User>(Common.BASE_URL + '/adm/v1/user', user);
-  } 
+  }
+
+  getById(id: string): Observable<User> {
+    const url: string = `${Common.BASE_URL}/adm/v1/user/${id}`;
+    return this.http.get<User>(url)
+  }
+
+  update(user: UserForm): Observable<User> {
+    const url = `${Common.BASE_URL}/adm/v1/user/${user.id}`;
+    return this.http.put<User>(url, user)
+  }
+
+  verifyIfNewPasswordsMatch(password1: string, password2: string): boolean {
+    return password1 === password2;
+  }
+
+  verifyIfOldPasswordMatch(oldPassword: string): Observable<Boolean> {
+    const url = `${Common.BASE_URL}/adm/v1/user/verify-old-password/1`;
+    return this.http.post<Boolean>(url, {password: oldPassword})
+  }
 }
