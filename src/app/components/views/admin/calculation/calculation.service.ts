@@ -28,4 +28,14 @@ export class CalculationService {
   createCalculation(calculation: CalculationDto): Observable<Calculation> {
     return this.http.post<Calculation>(Common.BASE_URL + '/adm/v1/calculation', calculation);
   } 
+
+  getById(id: string): Observable<Calculation> {
+    const url: string = `${Common.BASE_URL}/adm/v1/calculation/${id}`;
+    return this.http.get<Calculation>(url)
+  }
+
+  update(product: CalculationDto): Observable<CalculationDto> {
+    const url = `${Common.BASE_URL}/adm/v1/calculation/${product.id}`;
+    return this.http.put<CalculationDto>(url, product)
+  }
 }

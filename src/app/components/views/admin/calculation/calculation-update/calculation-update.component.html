@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-title>Alterar Cálculo</mat-card-title>
+  <form [formGroup]="formCalculationUpadate">
+
+    <mat-form-field >
+      <input matInput placeholder="Digite o valor do multiplicador" [(ngModel)]="calculationToUpdate.multiplier" formControlName="multiplier">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione o Produto</mat-label>
+      <mat-select formControlName="product" [(value)]="selectedProduct">
+        <mat-option *ngFor="let product of allProducts" value="{{product.id}}">{{product.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione o nível de intervenção</mat-label>
+      <mat-select formControlName="interventionLevel" [(value)]="selectedInterventionLevel">
+        <mat-option *ngFor="let il of interventionLevel" value="{{il.id}}">{{il.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione a fórmula</mat-label>
+      <mat-select formControlName="formula" [(value)]="selectedFormula">
+        <mat-option *ngFor="let formula of allFormulas" value="{{formula.id}}">{{formula.formula}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+
+  <button mat-raised-button (click)='update()' color='primary'>
+    Salvar
+  </button>
+  
+  <button mat-raised-button (click)='cancel()'>
+    Cancelar
+  </button>
+</mat-card>
