@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Calculation } from './calculation';
-import { CalculationService } from './calculation.service';
+import { Calculation } from './../calculation';
+import { CalculationService } from './../calculation.service';
 
 @Component({
   selector: 'app-calculation',
