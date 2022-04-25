@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable } from 'rxjs';
 import { Common } from 'src/app/common/common';
 import { Product } from './product';
 import { ProductDto } from './product-create/ProductDto';
+import { EMPTY, Observable } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,13 @@ export class ProductService {
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
-  showMessage(msg: string): void {
+  showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'X', {
-      duration: 4500,
+      duration: 5500,
       horizontalPosition: 'right',
-      verticalPosition: 'top'
-    }) 
+      verticalPosition: 'top',
+      panelClass: isError ? ['msg-error']: ['msg-success']
+    }); 
   }
 
   getProducts(): Observable<Product[]> {
@@ -41,7 +43,21 @@ export class ProductService {
 
   delete(id: string) {
     const url = `${Common.BASE_URL}/adm/v1/product/${id}`;
-    return this.http.delete(url);
+    return this.http.delete(url).pipe(
+      map(obj => obj),
+      catchError(e => {
+        if (e.status == 409) {
+          return this.errorHandler(e, 'Ocorreu um erro. Verifique se esse produto não é usada em nenhuma marca ou cálculo!');
+        } else {
+          return this.errorHandler(e, 'Ocorreu um erro. Tente novamente mais tarde');
+        }
+      })
+    );
+  }
+
+  errorHandler(e: any, text: string): Observable<any> {
+    this.showMessage(text, true)
+    return EMPTY;
   }
 
 }

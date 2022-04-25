@@ -114,7 +114,7 @@ export class CalculationUpdateComponent implements OnInit {
 
     this.calculationService.update(calculationDto)
     .subscribe(() => {
-      this.calculationService.showMessage('Calculo atualizado com sucesso!');
+      this.calculationService.showMessage('Cálculo atualizado com sucesso!');
       this.router.navigate(['', { outlets: { admin: ['calculation'] } }]);
     });
 

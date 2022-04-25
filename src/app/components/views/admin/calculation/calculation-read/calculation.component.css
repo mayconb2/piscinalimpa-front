@@ -14,3 +14,5 @@ i.delete {
 button {
   margin-top: 10px;
 }
+
+.hand { cursor: pointer; }

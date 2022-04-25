@@ -56,7 +56,6 @@ export class BrandService {
   }
 
   errorHandler(e: any, text: string): Observable<any> {
-    console.log(e)
     this.showMessage(text, true)
     return EMPTY;
   }
