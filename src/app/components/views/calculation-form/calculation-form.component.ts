@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CalculationResultComponent } from '../calculation-result/calculation-result.component';
 import { ApplicationSuggestions } from '../../model/calculationForm/applicationSuggestions';
 import { Calculation } from '../../model/calculationForm/calculation';
+import { HeaderService } from '../../template/header/header.service';
 
 @Component({
   selector: 'app-calculation-form',
@@ -38,11 +39,14 @@ export class CalculationFormComponent implements OnInit {
   }
 
   constructor(private productService: ProductService,
-    // private http: HttpClient,
     private formBuilder: FormBuilder,
     private calculationService: CalculationFormService,
-    // private router: Router,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private headerService: HeaderService) { 
+      headerService.hheaderTitle = {
+        title: 'Cálculo de produtos'
+      }
+     }
 
   ngOnInit(): void {
 

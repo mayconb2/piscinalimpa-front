@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderService } from '../../template/header/header.service';
 import { NewProductSuggestion } from './suggestion';
 import { SuggestionService } from './suggestion.service';
 
@@ -11,7 +12,13 @@ import { SuggestionService } from './suggestion.service';
 export class SuggestionComponent implements OnInit {
 
   constructor(private suggestionService: SuggestionService,
-              private router: Router) { }
+              private router: Router,
+              private headerService: HeaderService) {
+
+      headerService.hheaderTitle = {
+        title: 'Sugira seu produto'
+      }
+  }
 
 
   name: string = '';
