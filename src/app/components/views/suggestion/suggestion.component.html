@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title>Dê sua sugestão de produto</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Digite seu nome"  [(ngModel)]="name" name="name">
+      <!-- <input matInput placeholder="Digite seu nome"  [(ngModel)]="userToUpdate.login" name="login"> -->
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Nome e Marca do Produto</mat-label>
+      <textarea matInput placeholder="Digite o nome e marca do produto. Fique a vontade para adicionar qualquer comentário" [(ngModel)]="description" name="description"></textarea>
+      <!-- <input matInput placeholder="senha atual" [(ngModel)]="userToUpdate.password" name="passowrd">  -->
+    </mat-form-field>
+
+  </form>
+  
+  <button mat-raised-button (click)='sendToTrello()' color='primary'>
+    Enviar sugestão
+  </button>
+</mat-card>

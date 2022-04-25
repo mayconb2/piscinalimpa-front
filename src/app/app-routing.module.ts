@@ -22,6 +22,7 @@ import { UserUpdateComponent } from './components/views/admin/user/user-update/u
 import { ProductUpdateComponent } from './components/views/admin/product/product-update/product-update.component';
 import { CalculationUpdateComponent } from './components/views/admin/calculation/calculation-update/calculation-update.component';
 import { AdminComponent } from './components/views/admin/admin-view/admin.component';
+import { SuggestionComponent } from './components/views/suggestion/suggestion.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path:"calculation",
     component: CalculationFormComponent
+  },
+  {
+    path:"suggestion",
+    component: SuggestionComponent
   },
   {
     path:"calculation-result",

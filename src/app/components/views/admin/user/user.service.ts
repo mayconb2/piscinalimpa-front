@@ -39,7 +39,7 @@ export class UserService {
 
   update(user: UserForm): Observable<User> {
     const url = `${Common.BASE_URL}/adm/v1/user/${user.id}`;
-    return this.http.put<User>(url, user)
+    return this.http.put<User>(url, user);
   }
 
   verifyIfNewPasswordsMatch(password1: string, password2: string): boolean {

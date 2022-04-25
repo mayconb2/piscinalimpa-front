@@ -48,6 +48,7 @@ import { ProductUpdateComponent } from './components/views/admin/product/product
 import { CalculationUpdateComponent } from './components/views/admin/calculation/calculation-update/calculation-update.component';
 import { AdminComponent } from './components/views/admin/admin-view/admin.component';
 import { ConfirmDeleteComponent } from './components/template/dialog/confirm-delete/confirm-delete.component';
+import { SuggestionComponent } from './components/views/suggestion/suggestion.component';
 
 
 
@@ -79,6 +80,7 @@ import { ConfirmDeleteComponent } from './components/template/dialog/confirm-del
     ProductUpdateComponent,
     CalculationUpdateComponent,
     ConfirmDeleteComponent,
+    SuggestionComponent,
   ],
   imports: [
     BrowserModule,
