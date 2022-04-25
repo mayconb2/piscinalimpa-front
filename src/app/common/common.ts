@@ -4,7 +4,7 @@
 // }
 
 export const Common = Object.freeze({
-  // BASE_URL : 'https://piscinalimpa-back.herokuapp.com',
-  BASE_URL : 'http://localhost:8080',
+  BASE_URL : 'https://piscinalimpa-back.herokuapp.com',
+  // BASE_URL : 'http://localhost:8080',
   JWT : 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXljb25iMiIsImV4cCI6MTY0Njg5MjQwNX0.fgESQEMoqeXmmedICVQCi3RBwrRRUnql9henY2kQ8QwzOAmYErz0Q67sAl-gyedtmy6g1dQ7w80NybhuuYaMZA'
 });
