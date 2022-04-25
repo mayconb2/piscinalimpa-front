@@ -168,6 +168,7 @@ export class CalculationFormComponent implements OnInit {
   }
 
   private calculate() {
+    console.log(this.applicationForm)
     this.calculationService.calculateProducts(this.applicationForm)
       .subscribe(calc => {
         this.calculation.hasMininumProducts = calc.hasMininumProducts;

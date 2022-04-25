@@ -6,7 +6,7 @@
       <input matInput placeholder="Volume da Piscina em m³" formControlName="volume">
     </mat-form-field>
 
-    <hr>
+    <br>
 
     <mat-form-field appearance="fill">
       <mat-label>Medição de cloro</mat-label>
@@ -20,7 +20,7 @@
       </mat-select>
     </mat-form-field>
 
-    <hr>
+    <br>
 
     <mat-form-field appearance="fill">
       <mat-label>Medição do pH</mat-label>
@@ -36,7 +36,7 @@
       </mat-select>
     </mat-form-field>
 
-    <hr>
+    <br>
 
     <mat-form-field appearance="fill">
       <mat-label>Medição da alcalinidade</mat-label>
@@ -65,9 +65,9 @@
       </mat-select>
     </mat-form-field>
 
-    <hr>
+    <br>
 
-    <hr>
+    <br>
     <mat-form-field appearance="fill">
       <mat-label>Medição da Turbidez</mat-label>
       <mat-select formControlName="turbidity">
@@ -78,33 +78,33 @@
       </mat-select>
     </mat-form-field>
 
-    <hr>
+    <br>
 
     <mat-form-field appearance="fill">
       <mat-label>Selecione o produto1</mat-label>
       <mat-select formControlName="productOne">
-        <mat-option *ngFor="let product of productsAffectedParam1" value="{{product.id}}">{{product.brandName}} - {{product.name}}</mat-option>
+        <mat-option *ngFor="let product of productsAffectedParam1" value="{{product.id}}">{{product.name}}</mat-option>
       </mat-select>
     </mat-form-field>
     
     <mat-form-field appearance="fill">
       <mat-label>Selecione o produto2</mat-label>
       <mat-select formControlName="productTwo">
-        <mat-option *ngFor="let product of productsAffectedParam2" value="{{product.id}}">{{product.brandName}} - {{product.name}}</mat-option>
+        <mat-option *ngFor="let product of productsAffectedParam2" value="{{product.id}}">{{product.name}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Selecione o produto3</mat-label>
       <mat-select formControlName="productThree">
-        <mat-option *ngFor="let product of productsAffectedParam3" value="{{product.id}}">{{product.brandName}} - {{product.name}}</mat-option>
+        <mat-option *ngFor="let product of productsAffectedParam3" value="{{product.id}}">{{product.name}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Selecione o produto4</mat-label>
       <mat-select formControlName="productFour">
-        <mat-option *ngFor="let product of productsAffectedParam4" value="{{product.id}}">{{product.brandName}} - {{product.name}}</mat-option>
+        <mat-option *ngFor="let product of productsAffectedParam4" value="{{product.id}}">{{product.name}}</mat-option>
       </mat-select>
     </mat-form-field>
 

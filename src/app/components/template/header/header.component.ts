@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   }
 
   get title(): string {
-    console.log('xundas')
     return this.headerService.hheaderTitle.title;
   }
 
