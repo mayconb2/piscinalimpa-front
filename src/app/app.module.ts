@@ -27,7 +27,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './components/views/login/login.component';
-import { AdminComponent } from './components/views/admin/admin-view/admin.component';
 import { RequestInterceptor } from './common/auth/request.interceptor';
 import { BrandComponent } from './components/views/admin/brand/brand-read/brand.component';
 import { FormulaComponent } from './components/views/admin/formula/formula-read/formula.component';
@@ -47,6 +46,8 @@ import { BrandUpdateComponent } from './components/views/admin/brand/brand-updat
 import { UserUpdateComponent } from './components/views/admin/user/user-update/user-update.component';
 import { ProductUpdateComponent } from './components/views/admin/product/product-update/product-update.component';
 import { CalculationUpdateComponent } from './components/views/admin/calculation/calculation-update/calculation-update.component';
+import { AdminComponent } from './components/views/admin/admin-view/admin.component';
+import { ConfirmDeleteComponent } from './components/template/dialog/confirm-delete/confirm-delete.component';
 
 
 
@@ -77,6 +78,7 @@ import { CalculationUpdateComponent } from './components/views/admin/calculation
     UserUpdateComponent,
     ProductUpdateComponent,
     CalculationUpdateComponent,
+    ConfirmDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,6 +96,7 @@ import { CalculationUpdateComponent } from './components/views/admin/calculation
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatDialogModule,
     MatDialogModule,
     MatTabsModule,
     BrowserAnimationsModule,

@@ -37,4 +37,9 @@ export class FormulaService {
     const url = `${Common.BASE_URL}/adm/v1/formula/${formula.id}`;
     return this.http.put<Formula>(url, formula)
   }
+
+  delete(id: string) {
+    const url = `${Common.BASE_URL}/adm/v1/formula/${id}`;
+    return this.http.delete(url);
+  }
 }

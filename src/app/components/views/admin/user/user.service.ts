@@ -44,8 +44,8 @@ export class UserService {
     return password1 === password2;
   }
 
-  verifyIfOldPasswordMatch(oldPassword: string): Observable<Boolean> {
-    const url = `${Common.BASE_URL}/adm/v1/user/verify-old-password/1`;
-    return this.http.post<Boolean>(url, {password: oldPassword})
+  delete(id: string) {
+    const url = `${Common.BASE_URL}/adm/v1/user/${id}`;
+    return this.http.delete(url);
   }
 }

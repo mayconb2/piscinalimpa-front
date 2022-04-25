@@ -1,0 +1,6 @@
+<h1 md-dialog-title>Confirmar Exlcusão</h1>
+<div md-dialog-content>{{data.textDeleteConfirm}}</div>
+<div md-dialog-actions>
+  <button mat-raised-button color="warn" (click)="dialogRef.close(true)">Confirmar</button>
+  <button mat-raised-button (click)="dialogRef.close(false)">Cancelar</button>
+</div>

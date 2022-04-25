@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -7,18 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-
-  // links = [
-  //   {path: 'calculation', label: 'Calculation'},
-  //   {path: 'product', label: 'Product'}
-  // ];
-
-  // links = ['product', 'calculation']
-  // activeLink = this.links[0];
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.router.navigate(['', { outlets: { admin: ['product'] } }])
   }
 
 }

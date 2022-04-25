@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ConfirmDeleteComponent } from 'src/app/components/template/dialog/confirm-delete/confirm-delete.component';
 import { Brand } from '../../brand/brand';
 import { Product } from './../product';
 import { ProductService } from './../product.service';
@@ -36,7 +38,9 @@ export class ProductComponent implements OnInit {
 
   displayedColumns = ['id', 'name', 'brand', 'affectedParameter' ,'action'];
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService,
+              private router: Router,
+              private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -48,6 +52,31 @@ export class ProductComponent implements OnInit {
 
   navigateToCreateProduct(): void {
     this.router.navigate([{ outlets: { admin: [ 'product-create'] }}]);
+  }
+
+  confirmDeletion(id: string) {
+    const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
+      width: '450px',
+      data: {
+        textDeleteConfirm: "Tem certeza que deseja deletar este produto?"
+      }
+    });
+    
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+      
+        this.productService.delete(id).subscribe(() => {
+          
+          this.productService.getProducts()
+          .subscribe(products => {
+            this.allProducts = products;
+          });
+
+          this.productService.showMessage('Produto deletado com sucesso!');
+
+        });
+      }
+    });
   }
 
 }

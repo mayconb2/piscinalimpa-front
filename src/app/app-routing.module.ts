@@ -5,7 +5,6 @@ import { HomeComponent } from './components/views/home/home.component';
 import { CalculationFormComponent } from './components/views/calculation-form/calculation-form.component';
 import { CalculationResultComponent } from './components/views/calculation-result/calculation-result.component';
 import { LoginComponent } from './components/views/login/login.component';
-import { AdminComponent } from './components/views/admin/admin-view/admin.component';
 import { AuthGuard } from './common/auth/auth.guard';
 import { ProductComponent } from './components/views/admin/product/product-read/product.component';
 import { BrandComponent } from './components/views/admin/brand/brand-read/brand.component';
@@ -22,6 +21,7 @@ import { BrandUpdateComponent } from './components/views/admin/brand/brand-updat
 import { UserUpdateComponent } from './components/views/admin/user/user-update/user-update.component';
 import { ProductUpdateComponent } from './components/views/admin/product/product-update/product-update.component';
 import { CalculationUpdateComponent } from './components/views/admin/calculation/calculation-update/calculation-update.component';
+import { AdminComponent } from './components/views/admin/admin-view/admin.component';
 
 const routes: Routes = [
   {

@@ -39,4 +39,9 @@ export class ProductService {
     return this.http.put<ProductDto>(url, product)
   }
 
+  delete(id: string) {
+    const url = `${Common.BASE_URL}/adm/v1/product/${id}`;
+    return this.http.delete(url);
+  }
+
 }
